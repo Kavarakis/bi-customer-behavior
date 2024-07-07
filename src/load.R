@@ -1,0 +1,6 @@
+library(data.table)
+library(lubridate)
+data1 <- fread('./src/data/2019-Nov_cleaned_data.csv')
+data2 <- fread('./src/data/2019-Oct_cleaned_data.csv')
+data <- rbindlist(list(data1,data2))
+fwrite(data,'./src/data/full_data.csv')
